@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title  %}
+Кіру
+{% endblock %}
+{% block content %}
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3"><form action="#" method="post">
+  <h2>Сайтқа кіру</h2>
+    {%	if	form.errors	%}
+	<p>Пароль қате терілді.
+
+			</p>
+
+	{%	endif	%}
+    {% csrf_token %}
+		<p>
+			<label for="Email" class="floatLabel">ЖСН|ИИН</label>
+			{{ form.username }}
+		</p>
+		<p>
+			<label for="password" class="floatLabel">Пароль</label>
+			{{ form.password }}
+
+
+		<p>
+			<input type="submit" value="Кіру" id="submit">
+		</p>
+	</form>
+
+
+				</div>
+				<div class="col-sm-9"></div>
+		</div>
+        </div>
+	</section>
+
+
+
+
+{% endblock %}

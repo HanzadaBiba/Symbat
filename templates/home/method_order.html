@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ method.name|title }}
+{% endblock %}
+{% block content %}
+    <br>
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <input type="submit" value="Өтініш тастау">
+    </form>
+
+
+{% endblock %}

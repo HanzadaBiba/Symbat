@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ method.name|title }}
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="container">
+    <h1>{{ method.name }}</h1>
+    <p>{{ method.description|linebreaksbr }}</p>
+         {% if request.user.is_authenticated %}
+
+<button><a href="{% url 'home:order' slug=method.slug %}">Өтініш беру</a></button>
+    </div>
+             {% else %}
+
+<button><a href="{% url 'registration:register' %}">Тіркелу</a></button> немесе
+<button><a href="{% url 'registration:login' %}">Кіру</a></button>
+
+{% endif %}
+{% endblock %}

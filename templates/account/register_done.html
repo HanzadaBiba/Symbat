@@ -1,0 +1,29 @@
+
+
+
+
+
+{% extends "base.html" %}
+{% block title %}Тіркелу аяқталды!{% endblock %}
+{% load static %}
+{% block content %}
+
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+
+<h1>Қош келдіңіз! {{ new_user.first_name }}!</h1>
+<p>Сіздің аккаунт сәтті тіркелді. <a href="{% url "registration:login" %}">Кіру</a> ушін осы сілтемеден өтіңіз!</p>
+
+				</div>
+
+				<div class="col-sm-3">
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

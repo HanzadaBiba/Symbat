@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Главная
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+
+   <h1 >Мемлекеттік бағдарламалар</h1>
+    <table border="1" width="1000" >
+   <tr align="center">
+    <th>Логотип</th>
+    <th>Бағдарлама атауы</th>
+    <th>Орындалуы</th>
+   </tr>
+        {% for method in methods %}
+
+   <tr><td align="center"><img src="{{ method.image.url }}" width="100" height="100" alt=""></td><td>{{ method.name }}</td><td><a
+           href="{{ method.get_absolute_url }}">Толыгырак</a></td></tr>
+
+
+        {% empty %}
+<h1>Ештеме табылмады</h1>
+    {% endfor %}
+    </table>
+
+    </div>
+
+{% endblock %}

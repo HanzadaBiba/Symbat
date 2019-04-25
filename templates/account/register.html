@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Тіркелу{% endblock %}
+{% block content %}
+<div class="container">
+<h1>Тіркелу</h1>
+<p>Тіркелу үшін мәлеметтерді дұрыс толтырыныз;</p>
+<form action="." method="post">
+        {% csrf_token %}
+<p>ЖСН|ИИН:<br>{{ user_form.username }}</p>
+<p>Есімініз: <br>{{ user_form.first_name }}</p>
+<p>Почта:<br>{{ user_form.email }}</p>
+<p>Пароль:<br>{{ user_form.password }}</p>
+<p>Пароль(қайталау):<br>{{ user_form.password2 }}</p>
+      {% if user_form.errors %}
+          {{ user_form.errors }}
+
+      {% endif %}
+
+<p><input type="submit" value="Тіркелу"></p>
+</form>
+</div>
+
+{% endblock %}
